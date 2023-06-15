@@ -11,5 +11,10 @@
 	},
 	"devDependencies": {
 		"eslint": "^8.42.0"
+	},
+	"scripts": {
+		"clean": "yarn clean:0&&yarn clean:1",
+		"clean:0": "IF EXIST node_modules RD /Q/S node_modules",
+		"clean:1": "IF EXIST yarn.lock DEL /Q yarn.lock"
 	}
 }
