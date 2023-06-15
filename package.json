@@ -1,20 +1,14 @@
 {
 	"name": "find-dir",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"main": "src/main.js",
 	"license": "MIT",
-	"dependencies": {
-		"fs": "^0.0.1-security",
-		"js-yaml": "^4.1.0",
-		"json5": "^2.2.3",
-		"path": "^0.12.7"
-	},
-	"devDependencies": {
-		"eslint": "^8.42.0"
-	},
+	"dependencies": {},
+	"devDependencies": {},
 	"scripts": {
-		"clean": "yarn clean:0&&yarn clean:1",
+		"clean": "yarn clean:0&&yarn clean:1&&yarn clean:2",
 		"clean:0": "IF EXIST node_modules RD /Q/S node_modules",
-		"clean:1": "IF EXIST yarn.lock DEL /Q yarn.lock"
+		"clean:1": "IF EXIST yarn.lock DEL /Q yarn.lock",
+		"clean:2": "IF EXIST out RD /Q/S out"
 	}
 }
