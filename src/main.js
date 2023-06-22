@@ -1,4 +1,5 @@
 "use strict";
+const yargs = require("yargs");
 
 // #region required packages
 const fs = require("fs");
@@ -104,7 +105,8 @@ function doProcess(dirs) {
 	else if (dirs.length < 1) dirs.push(process.cwd());
 	v2 = DirectoryFinder
 		.init({ debug: true, verbose: false })
-		.directoryToFind("node_modules");
+		//.directoryToFind("node_modules");
+		.directoryToFind(".git");
 	dirs.forEach((adir) => {
 		dirsFound = v2
 			.initialDirectory(adir)
@@ -119,4 +121,31 @@ function doProcess(dirs) {
 		console.log("no directories found");
 }
 
-doProcess(process.argv.slice(2));
+//var v0 = yargs(process.argv.slice(2)).argv;
+//console.log(JSON.stringify(v0, null, "\t"));
+var v = yargs
+	.scriptName("riktest")
+	.usage("usage-here")
+	.option("dir", {
+		alias: "d",
+		type: "string",
+		description: "Directory-name to find.",
+		default: "node_modules"
+	})
+	.option("debug", {
+		alias: "D",
+		type: "boolean",
+		description: "Debug-processing.",
+		default: false
+	})
+	.option("verbose", {
+		alias: "v",
+		type: "boolean",
+		description: "Verbose-processing.",
+		default: false
+	})
+	.help()
+
+	.parse();
+console.log("here");
+//doProcess(process.argv.slice(2));

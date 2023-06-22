@@ -5,6 +5,21 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
+			"name": "debug-current",
+			"program": "${file}",
+			"request": "launch",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"type": "node",
+			"args": [
+				"--debug",
+				"--verbose",
+				"%USERPROFILE%/source",
+				"/js"
+			]
+		},
+		{
 			"type": "node",
 			"request": "launch",
 			"name": "debug-it",

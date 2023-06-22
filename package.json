@@ -3,7 +3,9 @@
 	"version": "1.0.1",
 	"main": "src/main.js",
 	"license": "MIT",
-	"dependencies": {},
+	"dependencies": {
+		"yargs": "^17.7.2"
+	},
 	"devDependencies": {},
 	"scripts": {
 		"clean": "yarn clean:0&&yarn clean:1&&yarn clean:2",
