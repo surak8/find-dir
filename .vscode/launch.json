@@ -15,8 +15,8 @@
 			"args": [
 				"--debug",
 				"--verbose",
-				"%USERPROFILE%/source",
-				"/js"
+				"${env:USERPROFILE}/source",
+				"${env:SYSTEMDRIVE}/js"
 			]
 		},
 		{
@@ -28,8 +28,10 @@
 			],
 			"program": "${workspaceFolder}/src/main.js",
 			"args": [
-				"/js/prod",
-				"/js/github/rik"
+				"--debug",
+				"--verbose",
+				"${env:USERPROFILE}/source",
+				"${env:SYSTEMDRIVE}/js"
 			]
 		}
 	]
